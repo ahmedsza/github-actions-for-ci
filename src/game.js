@@ -11,7 +11,8 @@ export default class Game {
     col = col || row
     this.board[row][col] = this.sym
   }
-
+  
+  //comment 
   nextPlayer () {
     this.player = this.player === this.p1 ? this.p2 : this.p1
     this.sym = this.sym === 'X' ? 'O' : 'X'
