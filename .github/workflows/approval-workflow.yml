@@ -1,0 +1,20 @@
+name: Team awesome's approval workflow
+on: pull_request_review
+jobs:
+  labelWhenApproved:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Label When Approved
+        # You may pin to the exact commit or the version.
+        # uses: TobKed/label-when-approved-action@4c5190fec5661e98d83f50bbd4ef9ebb48bd1194
+        uses: TobKed/label-when-approved-action@v1.3
+        with:
+          # The GITHUB_TOKEN secret of the repository
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # A label to be checked/added/removed
+          label: "my wonderfull label"
+          # Is approval from person with write access to repo required
+          require_committers_approval: "1"
+          # Comment to be added to Pull Request if approved
+          comment: "and my cool comment"
+
